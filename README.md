@@ -1,3 +1,17 @@
 # Biometric-Attendance-System
 Automated Biometric Attendance System using ATmega328p microcontroller, R307 fingerprint sensor, Bluetooth module, OLED display, and essential components for seamless user interaction.
-![image](https://github.com/bazingamofos/Biometric-Attendance-System/assets/69231405/39bcf33d-ad2d-446e-b26d-73dead5a5a12)
+<p align="center">
+  ![Screenshot 2023-12-27 154034](https://github.com/bazingamofos/Biometric-Attendance-System/assets/69231405/a7106070-1e28-497f-a5d5-3e73b04b47a4)
+  Hardware Schematic
+
+![ef1a89c5-4222-4c10-b507-ca81ae5f85cd](https://github.com/bazingamofos/Biometric-Attendance-System/assets/69231405/99f6e2ca-43bd-4a17-8433-674ca3d24192)
+![IMG_20231226_164131](https://github.com/bazingamofos/Biometric-Attendance-System/assets/69231405/09e9101d-0079-4598-a5cb-14f75e9325a4)
+Hardware Assembly Pictures
+</p>
+
+Project Overview:
+- Built with standalone ATmega328P.
+- Bluetooth module connects to the ArduTooth mobile app (Play Store).
+- The ArduTooth app displays real-time student entry and exit times.
+- TimeLib.h library in Arduino IDE enables time tracking. The sync message is sent by getting the Epoch Timestamp using the conversion tool - https://www.epochconverter.com/
+- OLED display, buzzer, and LEDs for a seamless user interface.
