@@ -29,7 +29,6 @@ function updateEntry(e) {
     var existingDate = sheet.getRange(1, j).getValue();
     var formattedExistingDate = (existingDate.getMonth() + 1) + "/" + existingDate.getDate() + "/" + existingDate.getFullYear();
     var newDate = String(date.replace(/^0(\d)\//, "$1/"));
-
     if (formattedExistingDate == newDate) {
       uniqueDateFound = true; // Date already exists, so don't insert a new column
       break;
@@ -49,9 +48,9 @@ function updateEntry(e) {
   if (!uniqueDateFound) {
     sheet.getRange(foundRow, 5).setValue("");
     sheet.getRange(foundRow, 6).setValue("");
-    for (var j = 9; j <= lastCol; j++) {
-      if (sheet.getRange(1, j).getValue() == "") {
-        sheet.getRange(1, j).setValue(date);
+    for (var k = 1; k <= lastCol; k++) {
+      if (sheet.getRange(1, k + 1).getValue() == "") {
+        sheet.getRange(1, k + 1).setValue(date);
         break;
       }
     }
