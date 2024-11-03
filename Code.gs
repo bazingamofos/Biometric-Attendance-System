@@ -1,4 +1,4 @@
-var sheet_id = "SHEET-ID"; // replace with your Sheet ID
+var sheet_id = "1ioJr0hBbvyyVmND4WuCwRc7fmJ6e9sCDhcAzIdkT8T4"; // replace with your Sheet ID
 var sheet_name = "Attendance";
 
 function doGet(e) {
@@ -36,16 +36,6 @@ function updateEntry(e) {
     }
   }
 
-  // If the date is unique, insert it into the next available column
-  if (!uniqueDateFound) {
-    for (var j = 9; j <= lastCol; j++) {
-      if (sheet.getRange(1, j).getValue() == "") {
-        sheet.getRange(1, j).setValue(date);
-        break;
-      }
-    }
-  }
-  
   // Check for existing entry
   for (var i = 2; i <= lastRow; i++) {
     var rowFingId = Number(sheet.getRange(i, 1).getValue());
@@ -54,6 +44,19 @@ function updateEntry(e) {
       break;
     }
   }
+
+  // If the date is unique, insert it into the next available column
+  if (!uniqueDateFound) {
+    sheet.getRange(foundRow, 5).setValue("");
+    sheet.getRange(foundRow, 6).setValue("");
+    for (var j = 9; j <= lastCol; j++) {
+      if (sheet.getRange(1, j).getValue() == "") {
+        sheet.getRange(1, j).setValue(date);
+        break;
+      }
+    }
+  }
+  
 
   // Insert new entry or update existing one
   if (foundRow === -1) {
@@ -74,7 +77,7 @@ function updateEntry(e) {
 }
 
 function updateGoogleSheetsWithStudentData() {
-  var apiUrl = "FIREBASE-URL"; // replace with your Firebase URL
+  var apiUrl = "https://iot-attendance-system-736bf-default-rtdb.asia-southeast1.firebasedatabase.app/students/details.json"; 
   var response = UrlFetchApp.fetch(apiUrl);
   var data = JSON.parse(response.getContentText());
   
