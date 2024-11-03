@@ -1,0 +1,24 @@
+{
+  "students": {
+    "details": {
+      "stud_1": {
+        "name": "Flavia Saldanha",
+        "stud_id": 211021007,
+        "stud_email": "fsaldanha_b21@el.vjti.ac.in",
+        "fing_id": 1
+      },
+      "stud_2": {
+        "name": "Max Black",
+        "stud_id": 211021010,
+        "stud_email": "mblack_b21@el.vjti.ac.in",
+        "fing_id": 2
+      },
+      "stud_3": {
+        "name": "Blair Waldorf",
+        "stud_id": 211061011,
+        "stud_email": "bewaldorf_b21@el.vjti.ac.in",
+        "fing_id": 3
+      }
+    }
+  }
+}
